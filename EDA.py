@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import pickle
-import seaborn as sns
 
 
 def missing_values_percentage(df):
