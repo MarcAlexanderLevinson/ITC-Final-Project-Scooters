@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import pickle
+import seaborn as sns
 
 
 def missing_values_percentage(df):
@@ -28,6 +29,7 @@ def basic_eda(df):
         df (DataFrame): The DataFrame containing the data.
 
     """
+    print(df.head())
     # Check the dimensions of the dataset (number of rows and columns)
     print("\nDataset dimensions:", df.shape)
 
@@ -94,6 +96,44 @@ def plot_sample_images(df, REQUIRED_WIDTH=200, REQUIRED_HEIGHT=250):
         plt.show()
 
 
+def plot_color_histograms(df, REQUIRED_WIDTH=200, REQUIRED_HEIGHT=250):
+    """
+    Plot histograms showing the distribution of different colors (RGB channels) in the images for each class.
+
+    Parameters:
+        df (DataFrame): The DataFrame containing the data.
+        REQUIRED_WIDTH (int): Required width of the images.
+        REQUIRED_HEIGHT (int): Required height of the images.
+    """
+    labels = df['label'].unique()
+
+    for label in labels:
+        sample_images = df[df['label'] == label].sample(n=3)
+
+        fig, axes = plt.subplots(3, 1, figsize=(8, 8))
+
+        for i, (_, row) in enumerate(sample_images.iterrows()):
+            image_data = np.array(row[1:], dtype='uint8').reshape((REQUIRED_HEIGHT, REQUIRED_WIDTH, 3))
+
+            # Calculate RGB histograms
+            hist_r, bins_r = np.histogram(image_data[:, :, 0].flatten(), bins=256, range=[0, 256])
+            hist_g, bins_g = np.histogram(image_data[:, :, 1].flatten(), bins=256, range=[0, 256])
+            hist_b, bins_b = np.histogram(image_data[:, :, 2].flatten(), bins=256, range=[0, 256])
+
+            # Plot RGB histograms
+            axes[i].plot(bins_r[:-1], hist_r, color='red', alpha=0.7)
+            axes[i].plot(bins_g[:-1], hist_g, color='green', alpha=0.7)
+            axes[i].plot(bins_b[:-1], hist_b, color='blue', alpha=0.7)
+            axes[i].set_xlim([0, 256])
+            axes[i].set_ylim([0, max(max(hist_r), max(hist_g), max(hist_b))])
+            axes[i].set_title(f'Label {label}, Image {i+1} Color Histograms')
+            axes[i].set_xlabel('Pixel Intensity')
+            axes[i].set_ylabel('Frequency')
+
+        plt.tight_layout()
+        plt.show()
+
+
 def main():
     with open('final_train_data.pkl', 'rb') as file:
         data = pickle.load(file)
@@ -102,6 +142,7 @@ def main():
     basic_eda(train)
     plot_label_distribution(train)
     plot_sample_images(train)
+    plot_color_histograms(train)
 
 
 if __name__ == "__main__":
