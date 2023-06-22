@@ -141,9 +141,13 @@ def concatenate_npz_files(file_prefix, output_file):
     print(f"All data saved to {output_file}.")
 
 
-if __name__ == "__main__":
+def main():
     train_dir, test_dir = split_images(IMAGE_DIRECTORY, TRAIN_DIRECTORY, TEST_DIRECTORY)
     preprocess_images(train_dir, OUTPUT_TRAIN_PICKLE, batch_size=1000)
     preprocess_images(test_dir, OUTPUT_TEST_PICKLE, batch_size=1000)
     concatenate_npz_files(OUTPUT_TRAIN_PICKLE, "final_train_data.pkl")
     concatenate_npz_files(OUTPUT_TEST_PICKLE, "final_test_data.pkl")
+
+
+if __name__ == "__main__":
+    main()
