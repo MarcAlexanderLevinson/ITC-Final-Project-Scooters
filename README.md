@@ -5,10 +5,10 @@
 
 This project is focused on classifying images of parked scooters into four categories:
 
-0: Scooter parked properly
-1: No scooter
-2: Scooter not parked upright
-3: Scooter blocks footpath
+0: Scooter parked properly\
+1: No scooter\
+2: Scooter not parked upright\
+3: Scooter blocks footpath\
 
 The business problem we're addressing is the misuse of the check-out system in shared scooter services. Currently, users are required to take a picture at the end of their ride to check out, presumably to ensure the scooter isn't damaged and is parked properly. However, these images are often not analyzed, leading to users frequently submitting irrelevant images. This system fails to achieve its purpose and can result in scooters being improperly parked or even damaged without accountability.
 
