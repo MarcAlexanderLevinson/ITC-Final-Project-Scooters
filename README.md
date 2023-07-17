@@ -27,7 +27,7 @@ This project is focused on classifying images of parked scooters into four categ
 <br/>
 <figure>
   <figcaption><b>Label 3: Scooter blocks footpath</b></figcaption>
-  <img src="1_1_vid_41_1520.jpg">
+  <img src="3_3_vid_77_180.jpg">
 </figure>
 <br/>
 
