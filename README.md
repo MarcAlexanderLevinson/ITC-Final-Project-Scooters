@@ -65,17 +65,20 @@ Our final model, without augmentation and edge detection, was found to deliver t
 Our final model achieved an overall accuracy of 80% on the test set. The precision, recall, and F1-score for each class are summarized as follows:
 <br>
 <br/>
-![843306b2-d69a-4c3e-b434-2d7053166ccc](https://github.com/DarShabi/ITC-Final-Project-Scooters/assets/127299167/e06d6798-6c28-4dea-bd73-34bf06ca2b02)
+
+<img width="433" alt="Screenshot 2023-07-18 at 16 33 03" src="https://github.com/DarShabi/ITC-Final-Project-Scooters/assets/127299167/362e7599-3296-4962-a7b3-459f9e067540">
+
 <br>
 <br/>
 The results indicate that the model performed well in identifying the presence of a scooter and its upright status. However, it appears to struggle somewhat in differentiating between correctly and poorly parked scooters.
 The confusion matrix provided gives us more insight:
 <br>
 <br/>
-<img width="159" alt="Screenshot 2023-07-17 at 10 28 00" src="https://github.com/DarShabi/ITC-Final-Project-Scooters/assets/127299167/6aff6285-304d-40a7-9e9d-fe5fde220526">
+<img width="173" alt="Screenshot 2023-07-18 at 16 35 41" src="https://github.com/DarShabi/ITC-Final-Project-Scooters/assets/127299167/ea96fd49-1a1d-46f0-98e4-fdca551283b9">
+
 <br>
 <br/>
-From the matrix, we can see that the most common confusion occurs between correctly parked scooters (Label 0) and scooters blocking footpaths (Label 3), where 43 instances of scooters blocking the footpath were misclassified as correctly parked scooters. 
+From the matrix, we can see that the most common confusion occurs between correctly parked scooters (Label 0) and scooters blocking footpaths (Label 3), where reletivly high percetage of the instances of scooters blocking the footpath were misclassified as correctly parked scooters. 
 
 ## Application Development
 
