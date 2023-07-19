@@ -89,7 +89,7 @@ To demonstrate the usability of our model, we developed an application using Str
 
 ## Future Work
 
-Future enhancements to this project could include the collection of more data, exploration of more advanced model architectures, and tuning hyperparameters to further improve the model's performance.
+Future enhancements should consider additional data collection, refining our labeling system and methodology to reduce subjectivity between labels, particularly between 'correctly parked' and 'blocking footpath'. Exploring more advanced model architectures and hyperparameter tuning could further elevate the model's performance.
 
 <footer>
   <p>&copy; 2023 Dar Shabi, Dan Lellouche, and Marc Levinson. All rights reserved.</p>
