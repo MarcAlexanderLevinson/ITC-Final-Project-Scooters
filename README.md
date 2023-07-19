@@ -84,7 +84,7 @@ From the matrix, we can see that the most common confusion occurs between correc
 
 To demonstrate the usability of our model, we developed an application using Streamlit. In this application, users can upload an image and receive an instant prediction of its classification category. 
 <br/>
-[Try our app](http://3.71.16.175:8501/)
+[Try our app]( http://172.16.0.128:8501)
 
 
 ## Future Work
