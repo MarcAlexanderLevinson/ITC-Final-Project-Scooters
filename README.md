@@ -1,6 +1,6 @@
 
 # Scooter Parking Classification Project
-###  Dar Shabi, Dan Lellouche, Marc Levinson
+###  Dan Lellouche, Dar Shabi, Marc Levinson
 ## Description
 
 This project is focused on classifying images of parked scooters into four categories:
